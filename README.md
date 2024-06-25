@@ -12,7 +12,7 @@ Straightforward setup process:
 
 Currently, the commands of the C2 Server involves only the very core functionalities that you may find in every C2 server.
 
-Just to briefly go through how data will be read/stored when using the C2:
+## Just to briefly go through how data will be read/stored when using the C2:
 
 Once the setup is complete, you can start using the Client to send tasks for the agent to execute. For example, let's say you send a "ls | grep txt" over to the agent, it will be stored as `tasks.json` first, and once executed, the `tasks.json` file will be deleted, results will be returned and stored as `results.json` for viewing in `/data/agents/<agent_name>`. You can use `view_results <agent_name>` to view the latest results yielded by a specific agent.
 
@@ -25,9 +25,11 @@ So now, how do I kill an agent / what happens when I kill an agent?
 # Commands
 
 You may enter `help` to view all commands
+
 ![image](https://github.com/yuuuu7/C2-Server/assets/107798032/1feaa9e9-4e12-4282-95c6-1933f6e9d275)
 
 You can also enter `help <topic>` to view the usage of the respective commands
+
 ![image](https://github.com/yuuuu7/C2-Server/assets/107798032/516a3b1f-a385-40fb-a692-91dd282a1eb8)
 
 # Detection
