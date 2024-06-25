@@ -2,7 +2,7 @@ import requests
 import time
 import os, sys
 
-TEAMSERVER_URL = 'http://192.168.207.1:8000'
+TEAMSERVER_URL = 'http://127.0.0.1:8000'
 
 def check_tasks():
     tasks_url = f'{TEAMSERVER_URL}/tasks/{AGENT_NAME}'

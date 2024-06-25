@@ -1,7 +1,7 @@
 import cmd
 import requests
 
-TEAMSERVER_URL = 'http://192.168.207.1:8000'
+TEAMSERVER_URL = 'http://127.0.0.1:8000'
 
 class C2CLI(cmd.Cmd):
     prompt = 'HTTP-C2> '
