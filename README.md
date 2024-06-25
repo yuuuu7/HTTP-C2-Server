@@ -37,7 +37,7 @@ You can also enter `help <topic>` to view the usage of the respective commands
 
 ![image](https://github.com/yuuuu7/C2-Server/assets/107798032/fd81f4f7-29c6-4a8b-835c-2285506db4a9)
 
-No evasion was done
+No evasion was intentionally implemented
 
 
 
