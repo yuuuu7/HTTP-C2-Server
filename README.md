@@ -20,7 +20,8 @@ Everytime a task is executed / new result is yielded, the `results.json` file wi
 
 So now, how do I kill an agent / what happens when I kill an agent?
 1. To kill an agent, simply do `send_task <agent_name> command terminate`
-2. When you kill an agent, the agent.py process on the `remote machine` will be killed, stopping all communication between the `remote machine` and the C2 server. After that, a message will be sent back to the Teamserver, telling the Teamserver that the agent has been successfully terminated and the respective agent's folder will be automatically removed.
+2. 
+3. When you kill an agent, the agent.py process on the `remote machine` will be killed, stopping all communication between the `remote machine` and the C2 server. After that, a message will be sent back to the Teamserver, telling the Teamserver that the agent has been successfully terminated and the respective agent's folder will be automatically removed.
 
 # Commands
 
