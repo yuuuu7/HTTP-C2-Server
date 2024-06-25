@@ -90,22 +90,30 @@ def receive_results(name):
     """Receive results from an agent"""
     result = request.form.get("result")
     results_file = f"data/agents/{name}/results.json"
+    agent_path = f"data/agents/{name}"
+
+    print(result)
     
-    try:
+    if result == "Agent terminated successfully":
+        try:
+            shutil.rmtree(agent_path)
+            return jsonify(result), 200
+        except OSError as e:
+            print(f"Error: {agent_path} : {e.strerror}")
+    else:
         if not os.path.exists(results_file):
             with open(results_file, "w") as f:
                 json.dump([result], f)
                 return '', 200
         elif os.path.exists(results_file):
+
             with open(results_file, "w") as f:
                 f.truncate(0)
                 json.dump([result], f)
                 return '', 200
-        else:
-            return '', 500
-    except OSError as e:
-        print(f"Error: {results_file} : {e.strerror}")
-        return '', 500
+        
+    
+    
     
 @app.route('/results/<name>', methods=['GET'])
 def view_results(name):
@@ -116,15 +124,7 @@ def view_results(name):
     if os.path.exists(results_file):
         with open(results_file, "r") as f:
             results = json.load(f)
-        if results == ["Agent terminated successfully"]:
-            try:
-                shutil.rmtree(agent_path)
-                return jsonify(results), 200
-            except OSError as e:
-                print(f"Error: {agent_path} : {e.strerror}")
-        else:
-            return jsonify(results), 200
-
+        return jsonify(results), 200
     else:
         return jsonify([]), 404
 
@@ -142,4 +142,4 @@ def download_file(agent_name, file_name):
         return '', 404
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000)
+    app.run(host='0.0.0.0', port=8000)
