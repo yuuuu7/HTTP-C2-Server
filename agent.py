@@ -31,7 +31,6 @@ def notify_termination():
         print(f"Failed to send agent termination notification: {response.status_code}")
 
 def execute_task(task):
-    # Implement task execution logic based on task type
     if task['type'] == 'command':
         command = task['data']
         if command == 'terminate':
@@ -73,7 +72,7 @@ if __name__ == '__main__':
     if AGENT_NAME != None:
         while True:
             check_tasks()
-            time.sleep(5)  # Check tasks every 10 seconds
+            time.sleep(10)  # Check tasks every 10 seconds
     else:
         print('Exiting...')
         sys.exit(1)
